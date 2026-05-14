@@ -1,0 +1,14 @@
+digraph CFG {
+  node [shape=box];
+  B1 [label="1. i = 1\n2. fact = 1\n3. L1: if i > n goto L4"];
+  B2 [label="4. fact = fact * i\n5. if fact % 2 == 0 goto L2"];
+  B3 [label="6. fact = fact + 1\n7. goto L3"];
+  B4 [label="8. L2: fact = fact + 2\n9. L3: i = i + 1\n10. goto L1"];
+  B5 [label="11. L4: print fact"];
+  B1 -> B1;
+  B1 -> B2;
+  B2 -> B1;
+  B2 -> B3;
+  B3 -> B1;
+  B4 -> B1;
+}
